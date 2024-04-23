@@ -2,22 +2,11 @@
 
 A lightweight carousel component for Svelte focused on low runtime and minimalism.
 
-```bash
-npm i svelte-light-carousel
-pnpm add svelte-light-carousel
-yarn add svelte-light-carousel
-```
-
 ## Usage
 
 ```svelte
-<script>
-	import Carousel from 'svelte-light-carousel';
-	const slides = Array.from({ length: 10 }, (_, i) => ({ title: `${i + 1}` }));
-</script>
-
 <Carousel {slides}>
-	<div slot="slide" let:slide>{slide.title}</div>
+ <div slot="slide" let:slide>{slide.title}</div>
 </Carousel>
 ```
 
@@ -70,6 +59,7 @@ yarn add svelte-light-carousel
 
 <!-- START:SLOTS -->
 ### slide
+
 Render the slide inside the carousel.
 <!-- START:slide -->
 | Name | Type |
@@ -79,6 +69,7 @@ Render the slide inside the carousel.
 | index | boolean |
 <!-- END:slide -->
 ### prev
+
 Render the previous button.
 <!-- START:prev -->
 | Name | Type |
@@ -87,6 +78,7 @@ Render the previous button.
 | prev | () => void |
 <!-- END:prev -->
 ### next
+
 Render the next button.
 <!-- START:next -->
 | Name | Type |
@@ -95,6 +87,7 @@ Render the next button.
 | next | () => void |
 <!-- END:next -->
 ### pagination
+
 Render the pagination. Useful if you want to group prev and next together.
 <!-- START:pagination -->
 | Name | Type |
@@ -107,6 +100,7 @@ Render the pagination. Useful if you want to group prev and next together.
 | prevA11y | ButtonsA11y['a11y'] |
 <!-- END:pagination -->
 ### progress
+
 Render the progress bar indicator.
 <!-- START:progress -->
 | Name | Type |
@@ -115,6 +109,7 @@ Render the progress bar indicator.
 | scrollTo | (e: PointerEvent) => void |
 <!-- END:progress -->
 ### dots
+
 Render the dots navigation.
 <!-- START:dots -->
 | Name | Type |
