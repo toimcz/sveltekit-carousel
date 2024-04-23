@@ -71,7 +71,6 @@ export const dragScroll = (
 			if (node.scrollLeft > node.scrollWidth - node.clientWidth - slideWidth / 2) {
 				return slideCount - slidesPerView;
 			}
-			console.log('here', node.scrollLeft, slideWidth);
 			return Math.ceil((node.scrollLeft - slideWidth / 3) / slideWidth);
 		} else {
 			return Math.floor(node.scrollTop / slideHeight);
@@ -81,7 +80,7 @@ export const dragScroll = (
 	const emitChange = () => {
 		currentSlide = getCurrentSlide();
 		onChange({
-			canScrollNext: currentSlide < slideCount - 1,
+			canScrollNext: currentSlide <= slideCount - slidesPerView - 1,
 			canScrollPrev: currentSlide > 0,
 			currentSlide,
 			progress: (node.scrollLeft / (node.scrollWidth - node.clientWidth)) * 100,
